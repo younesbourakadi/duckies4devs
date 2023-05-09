@@ -54,3 +54,42 @@ thumbs.forEach((thumb, index) => {
     picturesImg.src = `img/canard-jaune-${index + 1}-l.png`;
   });
 });
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+*
+*
+*               Ajout au panier 
+*
+*
+*/
+
+const addCta = document.querySelector('.add-cta');
+const cartNb = document.querySelector('.cart-nb');
+const addQty = document.querySelector('.add-qty');
+
+let productCounter = 0;
+let isAddedToCart = false;
+
+function addProductToCart() {
+  if (!isAddedToCart) {
+    const quantity = parseInt(addQty.value);
+    productCounter += quantity;
+
+    if (productCounter > 99) {
+      cartNb.textContent = '99+';
+    } else {
+      cartNb.textContent = productCounter;
+    }
+
+    isAddedToCart = true;
+    addCta.disabled = true;
+    addCta.textContent = 'Déjà au panier';
+    addCta.classList.add('added-to-cart');
+  }
+}
+
+addCta.addEventListener('click', addProductToCart);

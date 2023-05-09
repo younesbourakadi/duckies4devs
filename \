@@ -1,2 +1,0 @@
-const picturesNext = document.querySelector('.pictures-next')
-const picturesPrev = document.querySelector('.pictures-prev')
