@@ -17,13 +17,10 @@
 */
 
 
-
-
-// Au clic sur le bouton de gauche présent sur la photo, on affiche la photo précédente.
-
 const picturesNext = document.querySelector('.pictures-next');
 const picturesPrev = document.querySelector('.pictures-prev');
 const picturesImg = document.querySelector('.pictures-img');
+const thumbs = document.querySelectorAll('.thumbs-itm');
 
 let currentIndex = 1;
 const maxIndex = 5;
@@ -41,4 +38,19 @@ function scrollPreviousPicture() {
 picturesNext.addEventListener('click', scrollNextPicture);
 picturesPrev.addEventListener('click', scrollPreviousPicture);
 
-// 
+
+/*
+*
+*
+*       Version ordinateur 
+*
+*
+*/
+
+
+
+thumbs.forEach((thumb, index) => {
+  thumb.addEventListener('mouseover', () => {
+    picturesImg.src = `img/canard-jaune-${index + 1}-l.png`;
+  });
+});
