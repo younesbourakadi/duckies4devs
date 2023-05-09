@@ -93,3 +93,50 @@ function addProductToCart() {
 }
 
 addCta.addEventListener('click', addProductToCart);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+*
+*
+*              Accordéons 
+*
+*
+*/
+
+
+function toggleAccordion() {
+  const accordion = this.parentNode.querySelector(".product-advantages, .product-car");
+  this.classList.toggle("closed");
+  accordion.style.display = accordion.style.display === "none" ? "block" : "none";
+
+  const accordionStates = Array.from(accordionTitles).map((title) => ({
+    title: title.innerText,
+    closed: title.classList.contains("closed"),
+  }));
+
+  localStorage.setItem("accordionStates", JSON.stringify(accordionStates));
+}
+
+const accordionTitles = Array.from(document.querySelectorAll(".product-acrd-lnk"));
+
+const storedAccordionStates = localStorage.getItem("accordionStates");
+
+if (storedAccordionStates) {
+  const parsedAccordionStates = JSON.parse(storedAccordionStates);
+
+  parsedAccordionStates.forEach((state) => {
+    const title = accordionTitles.find((title) => title.innerText === state.title);
+    if (title) {
+      const accordion = title.nextElementSibling;
+      title.classList.toggle("closed", state.closed);
+      accordion.style.display = state.closed ? "none" : "block";
+    }
+  });
+}
+
+accordionTitles.forEach((title) => {
+  title.addEventListener("click", toggleAccordion);
+});
