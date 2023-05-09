@@ -140,3 +140,48 @@ if (storedAccordionStates) {
 accordionTitles.forEach((title) => {
   title.addEventListener("click", toggleAccordion);
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+*
+*
+*             Produits similaires 
+*
+*
+*/
+
+
+
+/*
+*
+*
+*       Version mobile 
+*
+*
+*/
+const slidesContainer = document.querySelector(".similar-lst");
+
+const slide = document.querySelector(".similar-itm");
+
+const prevButton = document.querySelector(".prev-similar-btn");
+
+const nextButton = document.querySelector(".next-similar-btn");
+
+nextButton.addEventListener("click", () => {
+
+  const slideWidth = slide.clientWidth;
+
+  slidesContainer.scrollLeft += slideWidth;
+
+});
+
+prevButton.addEventListener("click", () => {
+
+  const slideWidth = slide.clientWidth;
+
+  slidesContainer.scrollLeft -= slideWidth;
+
+});
+

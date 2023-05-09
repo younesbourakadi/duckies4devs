@@ -330,57 +330,161 @@ body {
 
 /* SIMILAR */
 
+/* .similar { */
+/*     width: 100%; */
+/*     max-width: var(--container-width); */
+/*     margin: 0 auto; */
+/*     overflow: hidden; */
+/* } */
+/* .similar-lst { */
+/*     display: grid; */
+/*     grid-template-columns: repeat(4, 1fr); */
+/* } */
+/* .similar-lnk { */
+/*     position: relative; */
+/*     display: flex; */
+/*     flex-direction: column; */
+/*     align-items: center; */
+/*     justify-content: space-between; */
+/*     gap: 1rem; */
+/*     padding: 1rem; */
+/*     color: #000; */
+/*     background-color: #fff; */
+/*     height: 100%; */
+/*     transition: background var(--transition-duration) var(--transition-function); */
+/* } */
+/* .similar-img { */
+/*     width:100%; */
+/* } */
+/* .similar-ttl { */
+/*     font-size: 1.5rem; */
+/*     text-align: center; */
+/* } */
+/* .similar-price { */
+/*     position: absolute; */
+/*     top: 1rem; */
+/*     right: 1rem; */
+/*     display: flex; */
+/*     justify-content: center; */
+/*     align-items: center; */
+/*     height: 3rem; */
+/*     padding: 0 1rem; */
+/*     border-radius: 1.5rem; */
+/*     font-size: 1.5rem; */
+/*     font-weight: bold; */
+/*     color: white; */
+/*     background-color: var(--primary-color); */
+/* } */
+
+/* @media screen and (min-width: 768px) { */
+/*     .similar-lnk:hover { */
+/*         background-color: #dddddd; */
+/*     } */
+/* } */
+
+
 .similar {
-    width: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    overflow: hidden;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  overflow: hidden;
 }
+
+.similar-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.prev-similar-btn,
+.next-similar-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #000;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-similar-btn {
+  left: 0;
+}
+
+.next-similar-btn {
+  right: 0;
+}
+
+.similar-carousel-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
 .similar-lst {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  scroll-snap-align: start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
+
+.similar-itm {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
 .similar-lnk {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem;
-    color: #000;
-    background-color: #fff;
-    height: 100%;
-    transition: background var(--transition-duration) var(--transition-function);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  color: #000;
+  background-color: #fff;
+  height: 100%;
+  transition: background var(--transition-duration) var(--transition-function);
+  text-decoration: none;
 }
+
 .similar-img {
-    width:100%;
+  width: 100%;
 }
+
 .similar-ttl {
-    font-size: 1.5rem;
-    text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
 }
+
 .similar-price {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3rem;
-    padding: 0 1rem;
-    border-radius: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    background-color: var(--primary-color);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary-color);
 }
 
 @media screen and (min-width: 768px) {
-    .similar-lnk:hover {
-        background-color: #dddddd;
-    }
+  .similar-lnk:hover {
+    background-color: #dddddd;
+  }
 }
+
 
 /* REINSURANCE  */
 
